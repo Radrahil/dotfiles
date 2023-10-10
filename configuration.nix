@@ -106,7 +106,6 @@
   direnv
   discord
   eww
-  fish
   font-awesome
   fzf
   git
@@ -119,13 +118,13 @@
   libsForQt5.polkit-kde-agent
   libsForQt5.qtstyleplugin-kvantum
   mako
+  metasploit
   neofetch
-  neovim
   netrw
   networkmanagerapplet
   nwg-look
   oh-my-fish
-  oh-my-zsh
+  pfetch
   polkit
   polkit_gnome
   powerline-fonts
@@ -139,18 +138,14 @@
   signal-desktop
   slurp
   statix
-  sway
   swaylock-effects
   swww
   unixtools.xxd
   unzip
   vim
-  waybar
   vscode
   wget
-  wireshark
   xsel
-  zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -181,10 +176,10 @@
   system.stateVersion = "23.05"; # Did you read the comment?
   
   programs = {
-    waybar.enable = true;
-    sway.enable = true;
-    neovim.enable = true;
     fish.enable = true;
+    neovim.enable = true;
+    sway.enable = true;
+    waybar.enable = true;
     wireshark.enable = true;
     };
 
