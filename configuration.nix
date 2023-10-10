@@ -183,6 +183,7 @@
     waybar.enable = true;
     sway.enable = true;
     neovim.enable = true;
+    wireshark.enable = true;
     fish.enable = true;
     };
 
