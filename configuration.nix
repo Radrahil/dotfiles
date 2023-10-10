@@ -123,6 +123,7 @@
   neovim
   netrw
   networkmanagerapplet
+  nwg-look
   oh-my-fish
   oh-my-zsh
   polkit
@@ -183,8 +184,8 @@
     waybar.enable = true;
     sway.enable = true;
     neovim.enable = true;
-    wireshark.enable = true;
     fish.enable = true;
+    wireshark.enable = true;
     };
 
   programs.neovim.defaultEditor = true;
@@ -232,6 +233,9 @@
        "QT_STYLE_OVERRIDE"="kvantum";
      };
 
+  environment.shellAliases = {
+    code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
+  };
   #Enable polkit
   security.polkit.enable = true;
 
