@@ -127,10 +127,10 @@
   netrw
   networkmanagerapplet
   nwg-look
-  oh-my-fish
   pfetch
   polkit
   polkit_gnome
+  python311Packages.flake8
   powerline-fonts
   powerline-symbols
   ranger
@@ -184,7 +184,6 @@
   programs = {
     fish.enable = true;
     neovim.enable = true;
-    sway.enable = true;
     waybar.enable = true;
     wireshark.enable = true;
     };
@@ -198,7 +197,6 @@
   enableCompletion = true;
   autosuggestions.enable = true;
   syntaxHighlighting.enable = true;
-  autosuggestions.strategy = ["completion"];
 };
 
   # Enabling hyprlnd on NixOS
@@ -250,6 +248,13 @@
           TimeoutStopSec = 10;
         };
     };
+  };
+
+  #Swaylock auth
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
   };
 
   #Automount HDD
