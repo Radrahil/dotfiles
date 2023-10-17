@@ -27,6 +27,8 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
+  # Set time to localtime (sync with windows)
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_IN";
@@ -100,8 +102,10 @@
   environment.systemPackages = with pkgs; [
   binwalk
   brightnessctl
+  betterdiscordctl
   btop
   calibre
+  cliphist
   cmatrix
   direnv
   discord
@@ -137,15 +141,17 @@
   shellcheck
   signal-desktop
   slurp
+  starship
   statix
   swaylock-effects
   swww
   unixtools.xxd
   unzip
   vim
+  virtualbox
   vscode
   wget
-  xsel
+  wl-clipboard
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -193,12 +199,6 @@
   autosuggestions.enable = true;
   syntaxHighlighting.enable = true;
   autosuggestions.strategy = ["completion"];
-
-  ohMyZsh = {
-    enable = true;
-    plugins = [ "git" "fzf" "branch" "rust"];
-    theme = "agnoster";
-  };
 };
 
   # Enabling hyprlnd on NixOS
@@ -231,6 +231,8 @@
   environment.shellAliases = {
     code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
   };
+
+
   #Enable polkit
   security.polkit.enable = true;
 
@@ -248,5 +250,11 @@
           TimeoutStopSec = 10;
         };
     };
+  };
+
+  #Automount HDD
+  fileSystems."/data" =
+  { device = "/dev/disk/by-uuid/AA820A5C820A2D7F";
+    fsType = "ntfs3";
   };
 }
